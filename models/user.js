@@ -5,12 +5,24 @@ const SALT_ROUNDS = 6;
 
 const userSchema = new mongoose.Schema({
   name: String,
-  email: {type: String, required: true, lowercase: true, unique: true},
+  email: String,
   password: String
 }, {
   timestamps: true
 });
-
+  
+userSchema.pre('save', function(next) {
+    // this will be set to the current document
+    const user = this;
+    console.log(user)
+    if(!user.isModified('password')) return next();
+    // password has been changed - salt and hash it
+    bcrypt.hash(user.password, SALT_ROUNDS, function(err, hash) {
+        if (err) return next(err);
+        user.password = hash;
+        next();
+    });
+});
 
 userSchema.set('toJSON', {
     transform: function(doc, ret) {
@@ -18,22 +30,10 @@ userSchema.set('toJSON', {
       delete ret.password;
       return ret;
     }
-  });
-  
-userSchema.pre('save', function(next) {
-// this will be set to the current document
-const user = this;
-if(!user.isModified('password')) return next();
-// password has been changed - salt and hash it
-bcrypt.hash(user.password, SALT_ROUNDS, function(err, hash) {
-    if (err) return next(err);
-    user.password = hash;
-    next();
-})
 });
 
 userSchema.methods.comparePassword = function(tryPassword, cb) {
-bcrypt.compare(tryPassword, this.password, cb);
+    bcrypt.compare(tryPassword, this.password, cb);
 };
 
 
