@@ -1,4 +1,4 @@
-import tokenService from './tokenService';
+import tokenService from './tokenService'
 
 const BASE_URL = '/api/users/';
 
@@ -13,16 +13,7 @@ function signup(user) {
     // Probably a duplicate email
     throw new Error('Email already taken!');
   })
-  .then(({token}) => {tokenService.setToken(token);
-  });
-}
-
-function getUser() {
-  return tokenService.getUserFromToken();
-}
-
-function logout() {
-  tokenService.removeToken();
+  .then(({token}) => tokenService.setToken(token));
 }
 
 function login(creds) {
@@ -33,14 +24,25 @@ function login(creds) {
   })
   .then(res => {
     if (res.ok) return res.json();
-    throw new Error('Bad Credentials!');
+    // Probably a duplicate email
+    throw new Error('Bad Credentials');
   })
   .then(({token}) => tokenService.setToken(token));
 }
 
-export default {
-  login,
-  signup,
-  getUser,
-  logout
+function getUser() {
+  return tokenService.getUserFromToken();
 }
+
+function logOut(){
+  tokenService.removeToken()
+}
+
+export default {
+  signup,
+  logOut,
+  getUser,
+  login
+};
+
+
