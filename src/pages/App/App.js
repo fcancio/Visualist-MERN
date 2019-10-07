@@ -9,6 +9,8 @@ import GratitudeList from '../../components/GratitudeList/GratitudeList'
 import WellnessList from '../../components/WellnessList/WellnessList';
 import MeetingsList from '../../components/MeetingList/MeetingsList';
 import TaskList from '../../components/TaskList/TaskList';
+import Schedule from '../../components/Schedule/Schedule';
+import Mantra from '../../components/Mantra/Mantra';
 
 class App extends Component {
   state = {
@@ -48,11 +50,13 @@ class App extends Component {
             />
           }/>
         </Switch>
-        <div>
-        <GratitudeList />
-        <WellnessList />
-        <MeetingsList />
-        <TaskList />
+        <div className="lists-page">
+          <div className="mantra"><Mantra /></div>
+          <div className="list"><GratitudeList /></div>
+          <div className="list"><WellnessList /></div>
+          <div className="list"><MeetingsList /></div>
+          <div className="list"><TaskList /></div>
+          <div className="schedule"><Schedule /></div>
         </div>
       </div>
     )

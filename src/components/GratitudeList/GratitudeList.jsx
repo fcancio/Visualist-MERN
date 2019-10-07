@@ -1,7 +1,12 @@
 import React from 'react';
+import styles from './GratitudeList.module.css';
 
-function GratitudePost() {
-    return <h2>GratitudeList</h2>
+function GratitudeList() {
+    return (
+    <h3>
+        Gratitude
+    </h3>
+    )
 }
 
-export default GratitudePost;
+export default GratitudeList;

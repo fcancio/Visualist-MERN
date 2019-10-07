@@ -1,7 +1,7 @@
 import React from 'react';
 
-function MeetingsPost() {
-    return <h2>MeetingsList</h2>
+function MeetingsList() {
+    return <h3>Meetings</h3>
 }
 
-export default MeetingsPost;
+export default MeetingsList;

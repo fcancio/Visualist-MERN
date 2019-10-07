@@ -1,7 +1,7 @@
 import React from 'react';
 
-function WellnessPost() {
-    return <h2>WellnessList</h2>
+function WellnessList() {
+    return <h3>Wellness</h3>
 }
 
-export default WellnessPost;
+export default WellnessList;
