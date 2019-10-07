@@ -11,10 +11,12 @@ import MeetingsList from '../../components/MeetingList/MeetingsList';
 import TaskList from '../../components/TaskList/TaskList';
 import Schedule from '../../components/Schedule/Schedule';
 import Mantra from '../../components/Mantra/Mantra';
+import GratitudeForm from '../../components/GratitudeForm/GratitudeForm';
 
 class App extends Component {
   state = {
-    user: userService.getUser()
+    user: userService.getUser(),
+    gratitude: [],
   }
 
   handleLogout = () => {
@@ -45,6 +47,12 @@ class App extends Component {
           }/>
           <Route exact path='/login' render={({ history }) => 
             <LoginPage
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin} 
+            />
+          }/>
+          <Route exact path='/gratitude' render={({ history }) => 
+            <GratitudePage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin} 
             />
