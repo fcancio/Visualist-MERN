@@ -5,7 +5,10 @@ import userService from '../../utils/userService';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/NavBar/NavBar';
-
+import GratitudeList from '../../components/GratitudeList/GratitudeList'
+import WellnessList from '../../components/WellnessList/WellnessList';
+import MeetingsList from '../../components/MeetingList/MeetingsList';
+import TaskList from '../../components/TaskList/TaskList';
 
 class App extends Component {
   state = {
@@ -46,7 +49,10 @@ class App extends Component {
           }/>
         </Switch>
         <div>
-      
+        <GratitudeList />
+        <WellnessList />
+        <MeetingsList />
+        <TaskList />
         </div>
       </div>
     )
