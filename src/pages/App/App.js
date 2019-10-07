@@ -6,6 +6,7 @@ import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
 import NavBar from '../../components/NavBar/NavBar';
 
+
 class App extends Component {
   state = {
     user: userService.getUser()
@@ -24,11 +25,12 @@ class App extends Component {
   render() {
     return (
       <div>
-        <header className="header-footer">V I S U A L I S T</header>
-        <NavBar
-          user={this.state.user}
-          handleLogout={this.handleLogout}
-        />
+        <header className="App-header">V I S U A L I S T
+          <NavBar
+            user={this.state.user}
+            handleLogout={this.handleLogout}
+          />
+        </header>
         <Switch>
           <Route exact path='/signup' render={({ history }) => 
             <SignupPage
@@ -43,6 +45,9 @@ class App extends Component {
             />
           }/>
         </Switch>
+        <div>
+      
+        </div>
       </div>
     )
   }
