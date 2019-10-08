@@ -4,7 +4,12 @@ import GratitudeForm from '../../components/GratitudeForm/GratitudeForm';
 class GratitudePage extends Component {
     render() {
         return (
-            <GratitudeForm />
+            <GratitudeForm 
+                history={this.props.history}
+                user={this.props.user}
+                updateGratitude={this.props.updateGratitude}
+            />
+
         )
     }
 }

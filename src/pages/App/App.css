@@ -29,7 +29,7 @@
   color: #09d3ac;
 }
 
-.lists-page {
+.display-lists {
   height: 100vh;
   display: grid;
   justify-content: space-evenly;

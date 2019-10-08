@@ -3,10 +3,20 @@ const bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 6;
 
+const gratitudeSchema = new mongoose.Schema({
+  first: String,
+  second: String,
+  third: String
+}, {
+  timestamps: true
+});
+
+
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
-  password: String
+  password: String,
+  gratitude: [gratitudeSchema]
 }, {
   timestamps: true
 });

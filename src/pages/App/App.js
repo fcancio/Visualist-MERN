@@ -2,16 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import { Route, Switch } from 'react-router-dom';
 import userService from '../../utils/userService';
+import NavBar from '../../components/NavBar/NavBar';
 import SignupPage from '../SignupPage/SignupPage';
 import LoginPage from '../LoginPage/LoginPage';
-import NavBar from '../../components/NavBar/NavBar';
-import GratitudeList from '../../components/GratitudeList/GratitudeList'
-import WellnessList from '../../components/WellnessList/WellnessList';
-import MeetingsList from '../../components/MeetingList/MeetingsList';
-import TaskList from '../../components/TaskList/TaskList';
-import Schedule from '../../components/Schedule/Schedule';
-import Mantra from '../../components/Mantra/Mantra';
-import GratitudeForm from '../../components/GratitudeForm/GratitudeForm';
+import LandingPage from '../LandingPage/LandingPage';
+import GratitudePage from '../GratitudePage/GratitudePage';
 
 class App extends Component {
   state = {
@@ -20,12 +15,18 @@ class App extends Component {
   }
 
   handleLogout = () => {
-    userService.logout();
+    userService.logOut();
     this.setState({ user:null });
   };
 
   handleSignupOrLogin = () => {
     this.setState({user: userService.getUser()});
+  }
+
+  updateGratitude = (newGrat) => {
+    this.setState({
+      gratitude: [newGrat, ...this.state.gratitude]
+    })
   }
 
 
@@ -38,37 +39,41 @@ class App extends Component {
             handleLogout={this.handleLogout}
           />
         </header>
+        <h2>TODAY IS {new Date().toLocaleDateString()}</h2>
         <Switch>
+          <Route exact path='/' render={({ history }) =>
+            <LandingPage
+              history={history}
+              user={this.state.user}
+              gratitude={this.state.gratitude}
+            />
+          }/>
           <Route exact path='/signup' render={({ history }) => 
             <SignupPage
-              history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin}
+            history={history}
+            handleSignupOrLogin={this.handleSignupOrLogin}
             />
           }/>
           <Route exact path='/login' render={({ history }) => 
             <LoginPage
-              history={history}
-              handleSignupOrLogin={this.handleSignupOrLogin} 
+            history={history}
+            handleSignupOrLogin={this.handleSignupOrLogin} 
             />
           }/>
           <Route exact path='/gratitude' render={({ history }) => 
             <GratitudePage
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin} 
+              user={this.state.user}
+              updateGratitude={this.updateGratitude}
             />
           }/>
-        </Switch>
-        <div className="lists-page">
-          <div className="mantra"><Mantra /></div>
-          <div className="list"><GratitudeList /></div>
-          <div className="list"><WellnessList /></div>
-          <div className="list"><MeetingsList /></div>
-          <div className="list"><TaskList /></div>
-          <div className="schedule"><Schedule /></div>
-        </div>
+          </Switch>
       </div>
     )
   }
 }
+
+
 
 export default App;
