@@ -14,6 +14,11 @@ class App extends Component {
     gratitude: [],
   }
 
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    console.log('cwrp', nextProps)
+  }
+
+
   handleLogout = () => {
     userService.logOut();
     this.setState({ user:null });
@@ -24,6 +29,7 @@ class App extends Component {
   }
 
   updateGratitude = (newGrat) => {
+    console.log('app update gratitude', newGrat)
     this.setState({
       gratitude: [newGrat, ...this.state.gratitude]
     })

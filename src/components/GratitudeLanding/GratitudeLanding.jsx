@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import GratitudeLogic from '../../components/GratitudeLogic/GratitudeLogic';
+import GratitudeList from '../GratitudeList/GratitudeList';
 
 const GratitudeLanding = (props) => {
-    console.log(props)
+    console.log('gratitude landing props', props)
     let gratitudeList = props.user ?
     <div className='Gratitude'>
         <h3>Gratitude</h3>
         <p>What are you grateful for today?</p>
-        <GratitudeLogic 
+        <GratitudeList 
             gratitude={props.gratitude}
             user={props.user}
         />

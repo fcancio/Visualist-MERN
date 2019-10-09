@@ -1,7 +1,8 @@
 import React from 'react';
 
 
-const GratitudeLogic = (props) => {
+const GratitudeList = (props) => {
+    console.log('gratitude logic props', props)
     return (
         // props.gratitude ? 
         //     <div>
@@ -19,4 +20,4 @@ const GratitudeLogic = (props) => {
     )
 };
 
-export default GratitudeLogic;
+export default GratitudeList;

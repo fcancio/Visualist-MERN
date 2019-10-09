@@ -7,6 +7,7 @@ import MantraLanding from '../../components/MantraLanding/MantraLanding';
 import ScheduleLanding from '../../components/ScheduleLanding/SchedulingLanding';
 
 const LandingPage = (props) => {
+    console.log('landing page props', props)
         return (
             <div className="display-lists">
                 <div className="mantra"><MantraLanding /></div>
