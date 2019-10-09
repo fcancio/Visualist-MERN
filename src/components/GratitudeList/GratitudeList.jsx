@@ -1,22 +1,33 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const GratitudeList = (props) => {
     console.log('gratitude logic props', props)
+    let userGrat = props.user.gratitude.length === 0 ?
+        <div>
+            <Link to='/gratitude'>ADD A GRATITUDE</Link>
+            {/* <div>
+                <li>{props.gratitude[0].first}</li>
+                <li>{props.gratitude[0].second}</li>
+                <li>{props.gratitude[0].third}</li>
+            </div> */}
+        </div>
+        :
+        <div>
+            <li>{props.user.gratitude[props.user.gratitude.length - 1].first}</li>
+            <li>{props.user.gratitude[props.user.gratitude.length - 1].second}</li>
+            <li>{props.user.gratitude[props.user.gratitude.length - 1].third}</li>
+        </div> 
     return (
-        // props.gratitude ? 
-        //     <div>
-        //         <li>{props.gratitude[0].first}</li>
-        //         <li>{props.gratitude[0].second}</li>
-        //         <li>{props.gratitude[0].third}</li>
-        //     </div>
+        <div>
+            {userGrat}
+        </div>
         
-        // :
-            <div>
-                <li>{props.user.gratitude[props.user.gratitude.length - 1].first}</li>
-                <li>{props.user.gratitude[props.user.gratitude.length - 1].second}</li>
-                <li>{props.user.gratitude[props.user.gratitude.length - 1].third}</li>
-            </div>         
+        // props.gratitude ? 
+
+        
+        // :         
     )
 };
 

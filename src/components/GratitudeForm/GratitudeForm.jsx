@@ -8,12 +8,13 @@ class GratitudeForm extends Component {
         personsArr: []
     };
 
+    // method calls fetch function
     addList = (e) => {
         e.preventDefault()
-        test(this.state.first, this.state.second, this.state.third, this.props.user).then(results => {
-            console.log(results)
+        getUserGrat(this.state.first, this.state.second, this.state.third, this.props.user).then(results => {
+            console.log('Results from GratitudeForm', results)
             
-            this.setState(state => ({
+            this.setState(results => ({
                 first: '',
                 second: '',
                 third: '',
@@ -24,11 +25,15 @@ class GratitudeForm extends Component {
         this.props.history.push('/')
     };
 
-    handleChange = event => {
+    handleChange = (event) => {
         this.setState({
             [event.target.name] : event.target.value
         })
+        // props.updateGratitude(event.target.value)
     }
+
+    // handleChangeGratState = (event) => {
+    //     this.props.updateGratitude(event.target.value)
 
 
 
@@ -66,7 +71,7 @@ class GratitudeForm extends Component {
 export default GratitudeForm;
 
 
-async function test(first, second, third, user) {
+async function getUserGrat(first, second, third, user) {
     const a = await fetch('/api/gratitude/', {
         method: 'POST',
         headers: {
