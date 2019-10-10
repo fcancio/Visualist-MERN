@@ -17,6 +17,7 @@ const gratitudeRouter = require('./routes/api/gratitude');
 const taskRouter = require('./routes/api/task');
 const wellnessRouter = require('./routes/api/wellness');
 const meetingsRouter = require('./routes/api/meetings');
+const mantraRouter = require('./routes/api/mantra');
 
 const app = express();
 
@@ -42,7 +43,7 @@ app.use('/api/gratitude', gratitudeRouter);
 app.use('/api/task', taskRouter);
 app.use('/api/wellness', wellnessRouter);
 app.use('/api/meetings', meetingsRouter);
-
+app.use('/api/mantra', mantraRouter);
 
 
 /* --- Catch all --- */
