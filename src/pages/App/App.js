@@ -9,13 +9,15 @@ import LandingPage from '../LandingPage/LandingPage';
 import GratitudePage from '../GratitudePage/GratitudePage';
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      user: userService.getUser(),
-      gratitude: [],
-    }
-}
+  state = {
+    user: userService.getUser(),
+    gratitude: [],
+  }
+
+  UNSAFE_componentWillReceiveProps(nextProps) {
+    console.log('cwrp', nextProps)
+  }
+
 
   handleLogout = () => {
     userService.logOut();
@@ -27,16 +29,14 @@ class App extends Component {
   }
 
   updateGratitude = (newGrat) => {
-    console.log('updateGratitude from App.js', newGrat)
+    console.log('app update gratitude', newGrat)
     this.setState({
       gratitude: [newGrat, ...this.state.gratitude]
     })
-    console.log('state gratitude array in App.js updateGratitude()', this.state.gratitude)
   }
 
 
   render() {
-    console.log('App.js: constructor')
     return (
       <div>
         <header className="App-header">V I S U A L I S T

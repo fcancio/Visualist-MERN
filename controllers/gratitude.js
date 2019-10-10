@@ -1,7 +1,8 @@
 const User = require('../models/user');
 
 module.exports = {
-    create
+    create,
+    getCurrentGratitude,
 }
 
 function create(req, res) {
@@ -17,3 +18,9 @@ function create(req, res) {
         }
     )
 }
+
+async function getCurrentGratitude(req, res) {
+    const user = await User.findById(req.params.userId);
+    await console.log(user)
+    res.status(200).json(user);
+  }

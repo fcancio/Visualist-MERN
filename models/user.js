@@ -11,12 +11,46 @@ const gratitudeSchema = new mongoose.Schema({
   timestamps: true
 });
 
+const wellnessSchema = new mongoose.Schema({
+  first: String,
+  second: String,
+  third: String
+}, {
+  timestamps: true
+});
+
+const meetingsSchema = new mongoose.Schema({
+  first: String,
+  second: String,
+  third: String
+}, {
+  timestamps: true
+});
+
+const taskSchema = new mongoose.Schema({
+  first: String,
+  second: String,
+  third: String
+}, {
+  timestamps: true
+});
+
+const mantraSchema = new mongoose.Schema({
+  first: String,
+}, {
+  timestamps: true
+});
+
 
 const userSchema = new mongoose.Schema({
   name: String,
   email: String,
   password: String,
-  gratitude: [gratitudeSchema]
+  gratitude: [gratitudeSchema],
+  wellness: [wellnessSchema],
+  meetings: [meetingsSchema],
+  taskSchema: [taskSchema],
+  mantra: [mantraSchema]
 }, {
   timestamps: true
 });

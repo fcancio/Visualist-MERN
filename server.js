@@ -22,7 +22,12 @@ app.use(express.static(path.join(__dirname, 'build')));
 
 /* --- API routes --- */
 app.use('/api/users', require('./routes/api/users'));
-app.use('/api/gratitude', require('./routes/api/gratitude'));
+app.use('/api/gratitude/:userId', require('./routes/api/gratitude'));
+// app.use('/api/wellness', require('./routes/api/wellness'));
+// app.use('/api/meetings', require('./routes/api/meetings'));
+// app.use('/api/task', require('./routes/api/task'));
+// app.use('/api/mantra', require('./routes/api/mantra'));
+
 
 // app.use(require('./config/auth'));
 
