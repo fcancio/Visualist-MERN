@@ -16,6 +16,7 @@ const usersRouter = require('./routes/api/users');
 const gratitudeRouter = require('./routes/api/gratitude');
 const taskRouter = require('./routes/api/task');
 const wellnessRouter = require('./routes/api/wellness');
+const meetingsRouter = require('./routes/api/meetings');
 
 const app = express();
 
@@ -34,12 +35,14 @@ app.use(express.urlencoded({ extended: false }));
 
 /* --- API routes --- */
 // Put API routes here, before the "catch all" route
+// Mount our custom auth middleware to protect routes below it
+// app.use(require('./config/auth'));
 app.use('/api/users', usersRouter);
 app.use('/api/gratitude', gratitudeRouter);
 app.use('/api/task', taskRouter);
 app.use('/api/wellness', wellnessRouter);
+app.use('/api/meetings', meetingsRouter);
 
-// app.use(require('./config/auth'));
 
 
 /* --- Catch all --- */
