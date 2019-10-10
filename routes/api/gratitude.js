@@ -5,8 +5,9 @@ const gratitudeCtrl = require('../../controllers/gratitude');
 // router.get('/', gratitudeCtrl.listAll);
 
 /* --- Protected Routes --- */
-router.use(require('../../config/auth'));
+router.use(require('../../config/auth')); /// this guy does some auth things but not the protecty ones
 router.post('/', gratitudeCtrl.create);
+router.get('/:userId', gratitudeCtrl.getCurrentGratitude)
 
 /* --- Helper Functions --- */
 // function checkAuth(req, res, next) {

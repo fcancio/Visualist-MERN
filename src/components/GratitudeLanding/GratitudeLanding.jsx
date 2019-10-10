@@ -19,9 +19,21 @@ const GratitudeLanding = (props) => {
         <Link to='/gratitude' className='Gratitude-link'>Add some gratitude</Link>
     </div>;
 
+    const composedGratitude = props.gratitude.map(item =>{ 
+      let createdTime = new Date(item.createdAt).getTime() / 1000 // this will work
+      return (
+    
+      <li key={item._id}>
+        <p>{item.first}</p>
+        <p>{item.second}</p>
+        <p>{item.third}</p>
+      </li>
+    )})
+
   return (
     <div className='Gratitude-list'>
-      {gratitudeList}
+      {/* {gratitudeList} */}
+      {composedGratitude}
     </div>
   );
 }

@@ -20,14 +20,14 @@ class App extends Component {
 
   
    async componentDidMount() {
-      console.log('App: compondentDidMount')
+      console.log('App: compondentDidMount', Date.now())
       console.log('AHHH I AM THE USER : ',this.state.user)
      const response = await getUserGrat(this.state.user._id)
-     await console.log(response)
+     await console.log('AHHH LINE 26 RESPONSE ::: ', response)
      this.setState({
-       gratitude : response
+       gratitude : response.gratitude
      })
-      // set the gratitude here when this component mounts 
+      //set the gratitude here when this component mounts 
     }
   
     componentDidUpdate() {
@@ -92,6 +92,7 @@ class App extends Component {
               history={history}
               handleSignupOrLogin={this.handleSignupOrLogin} 
               user={this.state.user}
+              gratitude={this.state.gratitude}
               updateGratitude={this.updateGratitude}
             />
           }/>
