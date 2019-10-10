@@ -35,7 +35,7 @@
   justify-content: space-evenly;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 4fr 4fr;
+  grid-template-rows: 1fr 1fr 4fr 4fr;
 }
 
 .mantra {
@@ -55,7 +55,7 @@
 
 .schedule {
   grid-column: 3 / 4;
-  grid-row: 1 / 4;
+  grid-row: 1 / 5;
   /* border-left: 1px solid black; */
   /* border-radius: 5px; */
   height: 100vh;

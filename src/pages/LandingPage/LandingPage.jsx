@@ -9,6 +9,8 @@ import ScheduleLanding from '../../components/ScheduleLanding/SchedulingLanding'
 const LandingPage = (props) => {
     console.log('landing page props', props)
         return (
+            <>
+                <h2>TODAY IS {new Date().toLocaleDateString()}</h2>
             <div className="display-lists">
                 <div className="mantra"><MantraLanding /></div>
                 <div className="list">
@@ -22,6 +24,7 @@ const LandingPage = (props) => {
                 <div className="list"><TaskLanding /></div>
                 <div className="schedule"><ScheduleLanding /></div>
             </div>
+            </>
         )
 }
 
