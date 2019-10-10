@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const taskCtrl = require('../../controllers/api/task');
+const wellnessCtrl = require('../../controllers/api/wellness');
 
 
 /* --- Protected Routes --- */
-/* GET /api/task */
+/* GET /api/wellness */
 router.use(require('../../config/auth')); /// this guy does some auth things but not the protecty ones
-router.post('/', taskCtrl.create);
-router.get('/:userId', taskCtrl.getCurrentTask)
-router.delete('/:userId', taskCtrl.delete);
-router.put('/:userId', taskCtrl.update);
+router.post('/', wellnessCtrl.create);
+router.get('/:userId', wellnessCtrl.getCurrentWellness)
+router.delete('/:userId', wellnessCtrl.delete);
+router.put('/:userId', wellnessCtrl.update);
 
 
 /* --- Helper Functions --- */
