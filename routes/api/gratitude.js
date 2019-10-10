@@ -3,11 +3,13 @@ const router = express.Router();
 const gratitudeCtrl = require('../../controllers/gratitude');
 
 
-/* --- Protected Routes --- */
 /* GET /api/gratitude */
+router.get('/:userId', gratitudeCtrl.getCurrentGratitude)
+
+
+/* --- Protected Routes --- */
 router.use(require('../../config/auth')); /// this guy does some auth things but not the protecty ones
 router.post('/', gratitudeCtrl.create);
-router.get('/:userId', gratitudeCtrl.getCurrentGratitude)
 
 
 /* --- Helper Functions --- */
@@ -15,6 +17,5 @@ router.get('/:userId', gratitudeCtrl.getCurrentGratitude)
 //     if (req.user) return next();
 //     return res.status(401).json({msg: 'Not Authorized'});
 // }
-
 
 module.exports = router;
