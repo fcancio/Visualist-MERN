@@ -3,6 +3,13 @@ const bcrypt = require('bcrypt');
 
 const SALT_ROUNDS = 6;
 
+const mantraSchema = new mongoose.Schema({
+  first: String,
+}, {
+  timestamps: true
+});
+
+
 const meetingsSchema = new mongoose.Schema({
   first: String,
   second: String,
@@ -46,7 +53,8 @@ const userSchema = new mongoose.Schema({
   gratitude: [gratitudeSchema],
   task: [taskSchema],
   wellness: [wellnessSchema],
-  meetings: [meetingsSchema]
+  meetings: [meetingsSchema],
+  mantra: [mantraSchema]
 }, {
   timestamps: true
 });
