@@ -5,6 +5,13 @@ module.exports = {
     getCurrentGratitude,
 }
 
+
+async function getCurrentGratitude(req, res) {
+    const user = await User.findById(req.params.userId);
+    await console.log(user)
+    res.status(200).json(user);
+};
+
 function create(req, res) {
     const obj = {
         first: req.body.first,
@@ -17,10 +24,4 @@ function create(req, res) {
             res.status(200).json(obj)
         }
     )
-}
-
-async function getCurrentGratitude(req, res) {
-    const user = await User.findById(req.params.userId);
-    await console.log(user)
-    res.status(200).json(user);
-  }
+};
