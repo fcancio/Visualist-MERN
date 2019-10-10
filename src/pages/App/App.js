@@ -15,7 +15,24 @@ class App extends Component {
       user: userService.getUser(),
       gratitude: [],
     }
-}
+    console.log('App.js: constructor')
+  }
+
+  
+   async componentDidMount() {
+      console.log('App: compondentDidMount')
+      console.log('AHHH I AM THE USER : ',this.state.user)
+     const response = await getUserGrat(this.state.user._id)
+     await console.log(response)
+     this.setState({
+       gratitude : response
+     })
+      // set the gratitude here when this component mounts 
+    }
+  
+    componentDidUpdate() {
+      console.log('App: componentDidUpdate')
+    }
 
   handleLogout = () => {
     userService.logOut();
@@ -27,16 +44,20 @@ class App extends Component {
   }
 
   updateGratitude = (newGrat) => {
-    console.log('updateGratitude from App.js', newGrat)
+    console.log('newGrat in updateGratitude() from App.js', newGrat)
     this.setState({
       gratitude: [newGrat, ...this.state.gratitude]
     })
     console.log('state gratitude array in App.js updateGratitude()', this.state.gratitude)
   }
 
+  componentWillUnmount() {
+    console.log('App: componentWillUnmount')
+  }
+
 
   render() {
-    console.log('App.js: constructor')
+    console.log('App.js: render')
     return (
       <div>
         <header className="App-header">V I S U A L I S T
@@ -45,7 +66,7 @@ class App extends Component {
             handleLogout={this.handleLogout}
           />
         </header>
-        <h2>TODAY IS {new Date().toLocaleDateString()}</h2>
+        
         <Switch>
           <Route exact path='/' render={({ history }) =>
             <LandingPage
@@ -80,6 +101,16 @@ class App extends Component {
   }
 }
 
-
-
 export default App;
+
+// this should be extracted to a service but this is what we will use to set up our state
+/**
+ * we need to get a specific user so that we can get all of their items
+ * we can then filter those items into seperate parts of state for each page i.e. gratitude is a piece of state
+ */
+async function getUserGrat(id) {
+  const a = await fetch(`/api/gratitude/${id}`)
+  const ajson = await a.json()
+  await console.log(ajson)
+  return ajson
+}

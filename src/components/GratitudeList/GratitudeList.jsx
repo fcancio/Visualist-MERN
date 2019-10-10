@@ -4,14 +4,15 @@ import { Link } from 'react-router-dom';
 
 const GratitudeList = (props) => {
     console.log('gratitude logic props', props)
-    let userGrat = props.user.gratitude.length === 0 ?
+    console.log('User.gratitude from GratitudeList Component', props.user.gratitude)
+    let userGrat = props.user.gratitude.length === 0 ? 
         <div>
             <Link to='/gratitude'>ADD A GRATITUDE</Link>
-            {/* <div>
+            <div>
                 <li>{props.gratitude[0].first}</li>
                 <li>{props.gratitude[0].second}</li>
                 <li>{props.gratitude[0].third}</li>
-            </div> */}
+            </div>  
         </div>
         :
         <div>
