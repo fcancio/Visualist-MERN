@@ -1,15 +1,15 @@
 const express = require('express');
 const router = express.Router();
-const gratitudeCtrl = require('../../controllers/gratitude');
+const mantraCtrl = require('../../controllers/api/mantra');
 
 
-/* GET /api/gratitude */
-router.get('/:userId', gratitudeCtrl.getCurrentGratitude)
+/* GET /api/mantra */
+router.get('/:userId', mantraCtrl.getCurrentMantra)
 
 
 /* --- Protected Routes --- */
 router.use(require('../../config/auth')); /// this guy does some auth things but not the protecty ones
-router.post('/', gratitudeCtrl.create);
+router.post('/', mantraCtrl.create);
 
 
 /* --- Helper Functions --- */

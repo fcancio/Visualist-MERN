@@ -27,7 +27,7 @@ class App extends Component {
    await console.log('AHHH LINE 26 RESPONSE ::: ', response)
    this.setState({
      gratitude : response.gratitude
-   })Z
+   })
    }
       //set the gratitude here when this component mounts 
     }

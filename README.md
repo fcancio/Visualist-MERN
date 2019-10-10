@@ -1,3 +1,32 @@
+### Introduction
+- A paragraph used to introduce interested parties to the project and needs to include one or more screenshots.
+- <img src="public/erd.png" width="400">
+
+### Technologies Used
+- A list of all technologies, libraries, APIs, etc. used in the project.
+- MongoDB, ExpressJS, ReactJS, and NodeJS (MERN Stack)
+- HTML
+- CSS
+- JavaScript
+- Mongoose
+- React
+- JSON Web Token Authentication & Authorization
+
+### Getting Started
+- Trello
+    - https://trello.com/b/NwinFdpS/visualist
+- Heroku
+    - https://visua-list.herokuapp.com/
+
+### Unsolved Problems
+- List any unsolved issues.
+
+### Future Enhancements
+- Identify future features and enhancements planned for the project.
+
+<br />
+<br />
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

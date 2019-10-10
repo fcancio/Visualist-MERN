@@ -1,12 +1,11 @@
-const User = require('../models/user');
+const User = require('../../models/user');
 
 module.exports = {
-    create,
-    getCurrentGratitude,
-}
+  create,
+  getCurrentMantra
+};
 
-
-async function getCurrentGratitude(req, res) {
+async function getCurrentMantra(req, res) {
     const user = await User.findById(req.params.userId);
     await console.log(user)
     res.status(200).json(user);
@@ -19,7 +18,7 @@ function create(req, res) {
         third: req.body.third
     }
     User.findById(req.body.user._id).then(person => {
-            person.gratitude.push(obj)
+            person.mantra.push(obj)
             person.save() 
             res.status(200).json(obj)
         }
