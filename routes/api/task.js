@@ -13,7 +13,7 @@ router.delete('/:userId', taskCtrl.delete);
 router.put('/:userId', taskCtrl.update);
 
 
-/* --- Helper Functions --- */
+// /* --- Helper Functions --- */
 // function checkAuth(req, res, next) {
 //     if (req.user) return next();
 //     return res.status(401).json({msg: 'Not Authorized'});
