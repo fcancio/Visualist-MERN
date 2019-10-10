@@ -20,13 +20,15 @@ class App extends Component {
 
   
    async componentDidMount() {
-      console.log('App: compondentDidMount', Date.now())
-      console.log('AHHH I AM THE USER : ',this.state.user)
-     const response = await getUserGrat(this.state.user._id)
-     await console.log('AHHH LINE 26 RESPONSE ::: ', response)
-     this.setState({
-       gratitude : response.gratitude
-     })
+   if (this.state.user !== null) {
+    console.log('App: compondentDidMount', Date.now())
+    console.log('AHHH I AM THE USER : ',this.state.user)
+   const response = await getUserGrat(this.state.user._id)
+   await console.log('AHHH LINE 26 RESPONSE ::: ', response)
+   this.setState({
+     gratitude : response.gratitude
+   })Z
+   }
       //set the gratitude here when this component mounts 
     }
   
