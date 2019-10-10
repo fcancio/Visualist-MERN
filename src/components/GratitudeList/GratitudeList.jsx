@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// TODO: make that a map because if we dont we cant controll 
 
 const GratitudeList = (props) => {
     console.log('gratitude logic props', props)
