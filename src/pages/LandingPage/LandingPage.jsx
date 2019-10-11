@@ -5,7 +5,7 @@ import MeetingsLanding from '../../components/MeetingsLanding/MeetingsLanding';
 import TaskLanding from '../../components/TaskLanding/TaskLanding';
 import MantraLanding from '../../components/MantraLanding/MantraLanding';
 import ScheduleLanding from '../../components/ScheduleLanding/SchedulingLanding';
-import styles from '../LandingPage/LandingPage.module.css';
+
 
 const LandingPage = (props) => {
     console.log('landing page props', props)

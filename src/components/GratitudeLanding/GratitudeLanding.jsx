@@ -16,10 +16,8 @@ const GratitudeLanding = (props) => {
     //     )
     // })
 
-               {/* //TODO render component <GratitudeList /> */}
-        {/* <div className='Gratitude-list'>
-            {gratitudeList}
-        </div> */}
+               /* //TODO render component <GratitudeList /> */
+ 
     console.log('props.gratitude', props.gratitude);
     return (
         props.gratitude.length !== 0 ?

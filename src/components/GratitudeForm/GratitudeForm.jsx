@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import '../GratitudeForm/GratitudeForm.css';
 
 class GratitudeForm extends Component {
     state = {
@@ -40,27 +42,25 @@ class GratitudeForm extends Component {
     render() {
         return (
             <>
-            <h5>What are you grateful for today?</h5>
-            {this.state.first}
-            {this.state.second}
-            {this.state.third}
+            <h1>What are you grateful for today?</h1>
             <form className="gratitude-form" onSubmit={this.addList}>
                 <div>
                     <div>
-                        <label>1. </label>
+                        <label>one.    </label>
                         <input name='first' value={this.state.first} onChange={this.handleChange} />
                     </div>
                     <div>
-                        <label>2.</label>
+                        <label>two.    </label>
                         <input name='second' value={this.state.second} onChange={this.handleChange} />
                     </div>
                     <div>
-                        <label>3.</label>  
+                        <label>three.</label>  
                         <input name='third' value={this.state.third} onChange={this.handleChange} />
                     </div>
-                    <button onClick={this.addList}>></button>
+                    <button onClick={this.addList}>submit</button>
                 </div>
             </form>
+                    <Link to='/'>Cancel</Link>
             </>
         );
     }
