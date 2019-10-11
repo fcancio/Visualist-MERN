@@ -16,8 +16,9 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: calc(10px + 2vmin);
+  /* font-size: calc(10px + 2vmin); */
   padding: 15px;
+  max-height: ;
 }
 
 .App-header a {
@@ -77,3 +78,4 @@
   overflow-y: auto;
   background-color: whitesmoke;
 }
+
