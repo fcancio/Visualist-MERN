@@ -72,7 +72,7 @@ export default GratitudeForm;
 
 
 async function getUserGrat(first, second, third, user) {
-    const a = await fetch('/api/gratitude/', {
+    const a = await fetch('/api/gratitude', {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
