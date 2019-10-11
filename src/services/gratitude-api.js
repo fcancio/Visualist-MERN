@@ -1,12 +1,13 @@
 import tokenService from './tokenService';
 
-// TODO: Refactor from GratitudeForm
+const BASE_URL = '/api/gratitude';
 
 export default  {
     getUserGrat,
     
 }
 
+// TODO: Refactor from GratitudeForm
 async function getUserGrat(first, second, third, user) {
     const a = await fetch('/api/gratitude/', {
         method: 'POST',

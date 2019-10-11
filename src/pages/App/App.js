@@ -53,6 +53,14 @@ class App extends Component {
     console.log('state gratitude array in App.js updateGratitude()', this.state.gratitude)
   }
 
+  deleteGratitude = (newUser) => {
+    console.log('newUser in deleteGratitude() from App.js', newUser)
+    this.setState({
+      gratitude: [newUser.gratitude]
+    })
+    console.log('state gratitude array in App.js deleteGratitude()', this.state.gratitude)
+  }
+
   componentWillUnmount() {
     console.log('App: componentWillUnmount')
   }
@@ -75,6 +83,7 @@ class App extends Component {
               history={history}
               user={this.state.user}
               gratitude={this.state.gratitude}
+              deleteGratitude={this.deleteGratitude}
             />
           }/>
           <Route exact path='/signup' render={({ history }) => 
@@ -117,3 +126,6 @@ async function getUserGrat(id) {
   await console.log(ajson)
   return ajson
 }
+
+
+

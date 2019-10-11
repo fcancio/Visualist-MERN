@@ -28,6 +28,7 @@ const GratitudeLanding = (props) => {
                 <GratitudeList 
                     gratitude={props.gratitude}
                     user={props.user}
+                    deleteGratitude={props.deleteGratitude}
                 />
             </div>
         :
