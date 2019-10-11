@@ -3,40 +3,40 @@ import { Link } from 'react-router-dom';
 import GratitudeList from '../GratitudeList/GratitudeList';
 
 const GratitudeLanding = (props) => {
-    console.log('gratitude landing props', props)
-    let gratitudeList = props.user ?
-    <div className='Gratitude'>
-        <h3>Gratitude</h3>
-        <p>What are you grateful for today?</p>
-        <GratitudeList 
-            gratitude={props.gratitude}
-            user={props.user}
-        />
-    </div>
-    :
-    <div>
-        <h3>Gratitude</h3>
-        <Link to='/gratitude' className='Gratitude-link'>Add some gratitude</Link>
-    </div>;
+    // console.log('gratitude landing props', props)
 
-    const composedGratitude = props.gratitude.map(item =>{ 
-      let createdTime = new Date(item.createdAt).getTime() / 1000 // this will work
-      return (
-    
-      <li key={item._id}>
-        <p>{item.first}</p>
-        <p>{item.second}</p>
-        <p>{item.third}</p>
-      </li>
-    )})
+    // const composedGratitude = props.gratitude.map(item =>{ 
+    //     let createdTime = new Date(item.createdAt).getTime() / 1000 // this will work
+    //     return (
+    //       //TODO: Move <li> block into <GratitudeList/> Component and pass props.gratitude and props.item through
+    //         <GratitudeList
+                
+    //         />
+    //     )
+    // })
 
-  return (
-    <div className='Gratitude-list'>
-      {/* {gratitudeList} */}
-      {composedGratitude}
-    </div>
-  );
-}
+               {/* //TODO render component <GratitudeList /> */}
+        {/* <div className='Gratitude-list'>
+            {gratitudeList}
+        </div> */}
+    console.log('props.gratitude', props.gratitude);
+    return (
+        props.gratitude.length !== 0 ?
+            <div className='Gratitude-list'>
+                <h3>Gratitudes</h3>
+                <p>What are you grateful for today?</p>
+                <GratitudeList 
+                    gratitude={props.gratitude}
+                    user={props.user}
+                />
+            </div>
+        :
+            <div>
+                <h3>No Gratitudes</h3>
+                <Link to='/gratitude' className='Gratitude-link'>Add some gratitude</Link>
+            </div>
+    );
+};
 
 
 export default GratitudeLanding;

@@ -10,5 +10,7 @@ router.get('/:userId', gratitudeCtrl.getCurrentGratitude)
 /* --- Protected Routes --- */
 router.use(require('../../config/auth')); /// this guy does some auth things but not the protecty ones
 router.post('/', checkAuth, gratitudeCtrl.create);
+// router.put('/:userId', gratitudeCtrl.update);
+
 
 module.exports = router;
