@@ -1,28 +1,41 @@
+# Visualist 
 ### Introduction
-- A paragraph used to introduce interested parties to the project and needs to include one or more screenshots.
-- <img src="public/erd.png" width="400">
+- Visualist is a todo list/app for the more visually inclined.
+<img src="public/Wireframe1.jpg" width="400">
+<img src="public/Wireframe2.jpg" width="400">
+<img src="public/erd.png" width="500">
 
 ### Technologies Used
-- A list of all technologies, libraries, APIs, etc. used in the project.
 - MongoDB, ExpressJS, ReactJS, and NodeJS (MERN Stack)
-- HTML
-- CSS
-- JavaScript
+- HTML / CSS / JavaScript
 - Mongoose
 - React
 - JSON Web Token Authentication & Authorization
 
 ### Getting Started
 - Trello
-    - https://trello.com/b/NwinFdpS/visualist
+    - [https://trello.com/b/NwinFdpS/visualist](https://trello.com/b/NwinFdpS/visualist)
+- GitHub
+	- [https://github.com/fcancio/Visualist-MERN/](https://github.com/fcancio/Visualist-MERN/)
 - Heroku
-    - https://visua-list.herokuapp.com/
+    - [https://visua-list.herokuapp.com/](https://visua-list.herokuapp.com/)
 
 ### Unsolved Problems
-- List any unsolved issues.
+- AAU, I would like to write down my top 3 wellness goals.
+- AAU, I would like to write down my top 3 tasks to complete for the day
+- AAU, I would like to write down 3 meetings I have for the day
+- AAU, I would like to see how my 'to-dos' fit into my daily schedule.
+- AAU, I would like to mark which todos I have completed throughout the day.
+- AAU, I would like to mark which todos have to roll over to the next day.
 
 ### Future Enhancements
-- Identify future features and enhancements planned for the project.
+- Ability to see which user completed a task
+- Able to comment on another user's posts/list
+- A responsive mobile design, collapsing from 3 columns to 1 columns.
+- A drag and drop feature to add tasks and/or meetings to the Schedule Landing Page.
+- View lists by date created.
+- Ability to share 'post' or 'list' with another user
+- Add admin abilities
 
 <br />
 <br />
