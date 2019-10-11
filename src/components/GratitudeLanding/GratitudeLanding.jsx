@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GratitudeList from '../GratitudeList/GratitudeList';
+import styles from '../GratitudeLanding/GratitudeLanding.module.css';
 
 const GratitudeLanding = (props) => {
     // console.log('gratitude landing props', props)
@@ -22,7 +23,7 @@ const GratitudeLanding = (props) => {
     console.log('props.gratitude', props.gratitude);
     return (
         props.gratitude.length !== 0 ?
-            <div className='Gratitude-list'>
+            <div className={styles.GratitudeLanding}>
                 <h3>Gratitudes</h3>
                 <p>What are you grateful for today?</p>
                 <GratitudeList 

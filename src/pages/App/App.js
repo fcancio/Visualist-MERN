@@ -71,6 +71,7 @@ class App extends Component {
     return (
       <div>
         <header className="App-header">V I S U A L I S T
+        <h3 className="date">TODAY IS {new Date().toLocaleDateString()}</h3>
           <NavBar
             user={this.state.user}
             handleLogout={this.handleLogout}

@@ -29,13 +29,25 @@
   color: #09d3ac;
 }
 
+.date {
+  border-radius: 8px;
+  padding: 10px;
+  background-color: white;
+}
+
 .display-lists {
+  background-color: #ebdccb;
   height: 100vh;
   display: grid;
   justify-content: space-evenly;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 4fr 4fr;
+}
+
+.list,
+.schedule {
+  background-color: white;
 }
 
 .mantra {

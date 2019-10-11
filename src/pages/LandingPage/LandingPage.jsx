@@ -5,12 +5,13 @@ import MeetingsLanding from '../../components/MeetingsLanding/MeetingsLanding';
 import TaskLanding from '../../components/TaskLanding/TaskLanding';
 import MantraLanding from '../../components/MantraLanding/MantraLanding';
 import ScheduleLanding from '../../components/ScheduleLanding/SchedulingLanding';
+import styles from '../LandingPage/LandingPage.module.css';
 
 const LandingPage = (props) => {
     console.log('landing page props', props)
         return (
             <>
-                <h2>TODAY IS {new Date().toLocaleDateString()}</h2>
+            {/* <div className={styles.LandingPage}> */}
             <div className="display-lists">
                 <div className="mantra"><MantraLanding /></div>
                 <div className="list">
@@ -25,7 +26,9 @@ const LandingPage = (props) => {
                 <div className="list"><TaskLanding /></div>
                 <div className="schedule"><ScheduleLanding /></div>
             </div>
+            {/* </div>  */}
             </>
+            
         )
 }
 

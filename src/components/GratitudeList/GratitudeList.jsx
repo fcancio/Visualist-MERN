@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../GratitudeList/GratitudeList.module.css';
 
 
 // TODO: make that a map because if we dont we cant controll 
@@ -23,13 +24,11 @@ const GratitudeList = (props) => {
     return (
         props.gratitude.map(item =>{ 
             return (
-                <div>
-                    <li key={item._id}>
-                        <p>{item.first}</p>
-                        <p>{item.second}</p>
-                        <p>{item.third}</p>
-                        <button onClick={() => handleDeleteGrat(item._id)}>X</button>
-                    </li>
+                <div className={styles.GratitudeList} key={item._id}>
+                        <li>{item.first}</li>
+                        <li>{item.second}</li>
+                        <li>{item.third}</li>
+                        <button className={styles.btnErase} onClick={() => handleDeleteGrat(item._id)}>erase</button>
                 </div>
             //TODO: Move <li> block into <GratitudeList/> Component and pass props.gratitude and props.item through
             )

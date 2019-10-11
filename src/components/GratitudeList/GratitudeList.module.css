@@ -1,4 +1,11 @@
-.GratitudeList {
-    border: 1px solid black;
-    border-radius: 5px;
+.ul {
+    margin-top: 5px;
+    /* border: 1px solid black;
+    border-radius: 5px; */
+}
+
+.btnErase {
+    border-radius: 4px;
+    margin: 10px 0px 0px 15px;
+    color: grey;
 }
