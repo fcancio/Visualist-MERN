@@ -1,8 +1,9 @@
 const User = require('../models/user');
 
 module.exports = {
-    create,
     getCurrentGratitude,
+    create,
+    delete: deleteGrat,
 }
 
 
@@ -26,6 +27,33 @@ function create(req, res) {
         }
     )
 };
+
+async function deleteGrat(req, res) {
+        console.log('CONTROLLER deleteGrat req.params.gratId:', req.params.userId)
+    const remove = await User.findOneAndUpdate( {'gratitude._id' : `${req.params.userId}`} ,
+    {
+        $pull: { gratitude: { _id: `${req.params.userId}` }}
+    },
+    {new: true},
+    function(err, doc){
+     console.log(err,doc)
+    })
+    res.status(200).json(remove);
+}
+
+// function deleteGrat(req, res) {
+//     //TODO: id in req.params.id should match gratitude id declared in handleDelete method
+//     User.findOneAndUpdate( {'item._id' : `${req.params.id}`}).then(remove => {
+//             $pull: { gratitude: { _id: `${req.params.id}` }}
+//         },
+//         {new: true},
+//         function(err, doc){
+//             console.log(err,doc)
+//         }), 
+//         res.status(200).json(remove);
+// }
+
+
 
 // async function update(req, res) {
 //     // const updatedGratitude = await User.findByIdAndUpdate(req.params.userId, req.body, {new: true});

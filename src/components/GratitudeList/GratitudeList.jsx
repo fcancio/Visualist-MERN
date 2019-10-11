@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 
 // TODO: make that a map because if we dont we cant controll 
 
@@ -8,6 +8,17 @@ const GratitudeList = (props) => {
     // console.log('User.gratitude from GratitudeList Component', props.user.gratitude)
     // let createdTime = new Date(item.createdAt).getTime() / 1000 // this will work
     
+    const handleDeleteGrat = async gratId => {
+        await deleteGratAPI(gratId).then
+            console.log('deleteGratAPI(gratId):', gratId)
+        const newUser = await getUserGrat(props.user._id);
+            console.log('handleDeleteGrat newUser=props.user._id:', props.user._id)
+        //TODO: pass handle function props that utilizes 'user' variable from app.js to pass id
+        // this.setState({gratitude: user.gratitude})
+        props.deleteGratitude(newUser)
+    }
+
+
     console.log("GratitudeList", props.gratitude)
     return (
         props.gratitude.map(item =>{ 
@@ -17,7 +28,7 @@ const GratitudeList = (props) => {
                         <p>{item.first}</p>
                         <p>{item.second}</p>
                         <p>{item.third}</p>
-                        {/* <button onClick={()=>handleEdit(item._id)}></button> */}
+                        <button onClick={() => handleDeleteGrat(item._id)}>X</button>
                     </li>
                 </div>
             //TODO: Move <li> block into <GratitudeList/> Component and pass props.gratitude and props.item through
@@ -28,9 +39,22 @@ const GratitudeList = (props) => {
         
 export default GratitudeList;    
 
+async function deleteGratAPI(gratId) {
+    console.log('deleteGratAPI gratId in GratitudeList', gratId)
+    return fetch(`/api/gratitude/${gratId}`, {
+        method: 'DELETE',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify({gratId})
+    }).then(res => res.json())
+}
 
-
-
+async function getUserGrat(id) {
+    const a = await fetch(`/api/gratitude/${id}`)
+    const ajson = await a.json()
+    await console.log(ajson)
+    return ajson
+}
+  
     // let userGrat = props.user.gratitude.length === 0 ? 
     //     <div>
     //         <Link to='/gratitude'>ADD A GRATITUDE</Link>

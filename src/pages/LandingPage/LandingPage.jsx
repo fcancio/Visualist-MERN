@@ -18,6 +18,7 @@ const LandingPage = (props) => {
                         history={props.history}
                         user={props.user}
                         gratitude={props.gratitude}
+                        deleteGratitude={props.deleteGratitude}
                     /></div>
                 <div className="list"><WellnessLanding /></div>
                 <div className="list"><MeetingsLanding /></div>
