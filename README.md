@@ -4,10 +4,10 @@
 Visualist is a daily todo list app that encourages a user to visualize exactly how the things that matter the most fit into their day.
 
 
-
-<img src="public/Wireframe1.jpg" width="400">
-<img src="public/Wireframe2.jpg" width="400">
-<img src="public/erd.png" width="500">
+<img src="public/Wireframe3.png" width="800">
+<img src="public/Wireframe1.jpg" width="500">
+<img src="public/Wireframe2.jpg" width="500">
+<img src="public/erd.png" width="600">
 
 ### Technologies Used
 - MongoDB, ExpressJS, ReactJS, and NodeJS (MERN Stack)
